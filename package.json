@@ -1,0 +1,31 @@
+{
+  "name": "ng2.owl.carousel",
+  "version": "1.0.0",
+  "description": "Owl Carousel for Angular 2+",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sguti/ng2.owl.carousel.git"
+  },
+  "keywords": [
+    "angular2",
+    "owl",
+    "carousel"
+  ],
+  "author": "=Sudip Guti <=sudipguti@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sguti/ng2.owl.carousel/issues"
+  },
+  "homepage": "https://github.com/sguti/ng2.owl.carousel#readme",
+  "dependencies": {
+    "jquery": ">= 2.2.0",
+    "owl.carousel": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=2.0.0"
+  }
+}
