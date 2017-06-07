@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sguti/ng2.owl.carousel.git"
+    "url": "git+https://github.com/sguti/ng2-owl-carousel2.git"
   },
   "keywords": [
     "angular2",
@@ -17,9 +17,9 @@
   "author": "=Sudip Guti <=sudipguti@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sguti/ng2.owl.carousel/issues"
+    "url": "https://github.com/sguti/ng2-owl-carousel2/issues"
   },
-  "homepage": "https://github.com/sguti/ng2.owl.carousel#readme",
+  "homepage": "https://github.com/sguti/ng2-owl-carousel2#readme",
   "dependencies": {
     "jquery": ">= 2.2.0",
     "owl.carousel": "^2.2.0"

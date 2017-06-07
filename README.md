@@ -1,6 +1,6 @@
 # ng2-owl-carousel2
-This is not a official distribution of owl carousel 2
-Owl Carosel for Angular 2+
+This is not a official distribution of owl carousel 2--
+--Owl Carosel for Angular 2+ --
 
 ### Installation
 Run this command to install this library
