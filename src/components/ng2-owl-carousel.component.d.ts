@@ -3,7 +3,6 @@ import { CarouselOptions, ScreenResolutionMap, MergefitMap } from '../options/ng
 declare class Ng2OwlCarouselComponent implements OnInit, AfterViewInit {
     options: CarouselOptions;
     defaultOptions: CarouselOptions;
-    $carousel: any;
     constructor();
     ngOnInit(): void;
     ngAfterViewInit(): void;

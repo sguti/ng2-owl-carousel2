@@ -10,14 +10,13 @@ declare var $: any;
   selector: 'ng2-owl-carousel',
   template:`
   <div class="carousel-wrapper owl-carousel owl-theme">
-    <ng-content"> </ng-content>
+    <ng-content> </ng-content>
   </div>`
 })
 class Ng2OwlCarouselComponent implements OnInit, AfterViewInit {
 
   @Input() options: CarouselOptions;
   defaultOptions : CarouselOptions;
-  $carousel: any;
 
   constructor() {
     this.defaultOptions = new CarouselOptions();
@@ -33,22 +32,25 @@ class Ng2OwlCarouselComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    this.$carousel = $(".carousel-wrapper");
+    const $carousel: any = $(".carousel-wrapper");
 
     /* Handle mouse scroll */
-    if(this.options.mouseScroll){
+    if(this.options.mouseScroll) {
        // tslint:disable-next-line:typedef
-       this.$carousel.on("mousewheel", ".owl-stage", function(e: any) {
+
+      let onScrollHandler: any = function (e: any): void {
         if (e.deltaY > 0) {
-          this.$carousel.trigger("next.owl");
+          $carousel.trigger("next.owl");
         } else {
-          this.$carousel.trigger("prev.owl");
+          $carousel.trigger("prev.owl");
         }
         e.preventDefault();
-      });
+      }.bind(this);
+
+       $carousel.on("mousewheel", ".owl-stage", onScrollHandler);
     }
 
-    this.$carousel.owlCarousel(this.options);
+    $carousel.owlCarousel(this.options);
   }
 
 }

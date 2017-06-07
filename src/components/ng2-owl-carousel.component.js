@@ -25,21 +25,22 @@ var Ng2OwlCarouselComponent = (function () {
         }
     };
     Ng2OwlCarouselComponent.prototype.ngAfterViewInit = function () {
-        this.$carousel = $(".carousel-wrapper");
+        var $carousel = $(".carousel-wrapper");
         /* Handle mouse scroll */
         if (this.options.mouseScroll) {
             // tslint:disable-next-line:typedef
-            this.$carousel.on("mousewheel", ".owl-stage", function (e) {
+            var onScrollHandler = function (e) {
                 if (e.deltaY > 0) {
-                    this.$carousel.trigger("next.owl");
+                    $carousel.trigger("next.owl");
                 }
                 else {
-                    this.$carousel.trigger("prev.owl");
+                    $carousel.trigger("prev.owl");
                 }
                 e.preventDefault();
-            });
+            }.bind(this);
+            $carousel.on("mousewheel", ".owl-stage", onScrollHandler);
         }
-        this.$carousel.owlCarousel(this.options);
+        $carousel.owlCarousel(this.options);
     };
     return Ng2OwlCarouselComponent;
 }());
@@ -50,7 +51,7 @@ Ng2OwlCarouselComponent = __decorate([
     core_1.Component({
         // tslint:disable-next-line:quotemark
         selector: 'ng2-owl-carousel',
-        template: "\n  <div class=\"carousel-wrapper owl-carousel owl-theme\">\n    <ng-content\"> </ng-content>\n  </div>"
+        template: "\n  <div class=\"carousel-wrapper owl-carousel owl-theme\">\n    <ng-content> </ng-content>\n  </div>"
     })
 ], Ng2OwlCarouselComponent);
 exports.Ng2OwlCarouselComponent = Ng2OwlCarouselComponent;
