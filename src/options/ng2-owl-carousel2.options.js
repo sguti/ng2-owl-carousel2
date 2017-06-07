@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ng2_owl_carousel_mapping_1 = require("./ng2.owl.carousel.mapping");
-exports.ScreenResolutionMap = ng2_owl_carousel_mapping_1.ScreenResolutionMap;
-exports.MergefitMap = ng2_owl_carousel_mapping_1.MergefitMap;
+var ng2_owl_carousel2_mapping_1 = require("./ng2-owl-carousel2.mapping");
+exports.ScreenResolutionMap = ng2_owl_carousel2_mapping_1.ScreenResolutionMap;
+exports.MergefitMap = ng2_owl_carousel2_mapping_1.MergefitMap;
 var CarouselOptions = (function () {
     function CarouselOptions() {
         this.navContainer = false;

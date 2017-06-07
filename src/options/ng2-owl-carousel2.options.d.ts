@@ -1,4 +1,4 @@
-import { ScreenResolutionMap, MergefitMap } from "./ng2.owl.carousel.mapping";
+import { ScreenResolutionMap, MergefitMap } from "./ng2-owl-carousel2.mapping";
 declare class CarouselOptions {
     items: number;
     margin: number;
@@ -65,9 +65,6 @@ declare class CarouselOptions {
     preloadCount: number;
     maxItemCount: number;
     constructor();
-    /**
-    * @param {boolean} enable - pass true to set auto height
-    */
     setAutoHeight(enable: boolean): CarouselOptions;
     setAutoWidth(enable: boolean): CarouselOptions;
     enableAutoPlay(autoPlay?: boolean, autoplayTimeout?: number, autoplayHoverPause?: boolean): CarouselOptions;

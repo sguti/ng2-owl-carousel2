@@ -9,17 +9,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // tslint:disable-next-line:quotemark
 var core_1 = require("@angular/core");
 // tslint:disable-next-line:quotemark
-var ng2_owl_carousel_options_1 = require("../options/ng2.owl.carousel.options");
-exports.CarouselOptions = ng2_owl_carousel_options_1.CarouselOptions;
-exports.ScreenResolutionMap = ng2_owl_carousel_options_1.ScreenResolutionMap;
-exports.MergefitMap = ng2_owl_carousel_options_1.MergefitMap;
+var ng2_owl_carousel2_options_1 = require("../options/ng2-owl-carousel2.options");
+exports.CarouselOptions = ng2_owl_carousel2_options_1.CarouselOptions;
+exports.ScreenResolutionMap = ng2_owl_carousel2_options_1.ScreenResolutionMap;
+exports.MergefitMap = ng2_owl_carousel2_options_1.MergefitMap;
 var Ng2OwlCarouselComponent = (function () {
     function Ng2OwlCarouselComponent() {
-        this.defaultOptions = new ng2_owl_carousel_options_1.CarouselOptions();
+        this.defaultOptions = new ng2_owl_carousel2_options_1.CarouselOptions();
     }
     Ng2OwlCarouselComponent.prototype.ngOnInit = function () {
         if (this.options) {
-            if (!(this.options instanceof ng2_owl_carousel_options_1.CarouselOptions)) {
+            if (!(this.options instanceof ng2_owl_carousel2_options_1.CarouselOptions)) {
                 this.options = Object.assign(this.defaultOptions, this.options);
             }
         }
@@ -50,7 +50,7 @@ __decorate([
 Ng2OwlCarouselComponent = __decorate([
     core_1.Component({
         // tslint:disable-next-line:quotemark
-        selector: 'ng2-owl-carousel',
+        selector: 'ng2-owl-carousel2',
         template: "\n  <div class=\"carousel-wrapper owl-carousel owl-theme\">\n    <ng-content> </ng-content>\n  </div>"
     })
 ], Ng2OwlCarouselComponent);

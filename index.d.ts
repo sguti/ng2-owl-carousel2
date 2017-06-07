@@ -1,1 +1,1 @@
-export * from "./src/components/ng2-owl-carousel.component";
+export * from "./src/components/ng2-owl-carousel2.component";
