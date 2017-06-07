@@ -1,10 +1,9 @@
 {
   "name": "ng2-owl-carousel2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Owl Carousel for Angular 2+",
   "main": "index.js",
-  "scripts": {   
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sguti/ng2-owl-carousel2.git"
