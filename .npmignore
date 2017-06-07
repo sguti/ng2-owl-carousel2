@@ -1,0 +1,9 @@
+#Ignore node_modules
+node_modules/
+
+#ignore .ts files
+*.ts
+!*.d.ts
+
+#ignore tsconfig
+tsconfig.json
