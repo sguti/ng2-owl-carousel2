@@ -7,7 +7,7 @@ This is not an official distribution of owl carousel 2
 ### Installation
 Run this command to install this library
 ```bash
-npm install ng2-owl-carousel2
+npm install ng2-owl-carousel2 --save
 ```
 
 
@@ -16,9 +16,9 @@ npm install ng2-owl-carousel2
 
 ### Dependencies
 
-This library needs jquery and owl carousel library
+This library has dependency on jquery and owl carousel library
 
-import jquery globally as per your type of your project.
+import jquery globally as per your your project type.
 
 import owlcarousel library after importing jquery
 
@@ -42,7 +42,7 @@ import { Ng2OwlCarouselComponent } from "ng2.owl.carousel";
 })
 export class AppModule { }
 ```
-Now go the component where you want to use it. and place your html inside <ng2-owl-carousel2></ng2-owl-carousel2> tag
+Now go the component where you want to use it. and place your html inside ```<ng2-owl-carousel2></ng2-owl-carousel2>``` tag
 
 ```html
  <ng2-owl-carousel2
@@ -72,15 +72,15 @@ In the typescript file-
 
 
 ## APIs
-1.  **setAutoHeight(enable: boolean)**--
+1.  **setAutoHeight(enable: boolean)**    
     Set auto height
-2.  **setAutoWidth(enable: boolean)**--
-    set auto width 
-3.  **enableAutoPlay(autoPlay?: boolean, autoplayTimeout?: number, autoplayHoverPause?: boolean)**--
+2.  **setAutoWidth(enable: boolean)** 
+     Set auto width 
+3.  **enableAutoPlay(autoPlay?: boolean, autoplayTimeout?: number, autoplayHoverPause?: boolean)**
     Enables auto play
-4.  **enableLazyLoading(enable: boolean)**--
+4.  **enableLazyLoading(enable: boolean)**
     Enables lazy loading of images
-5.  **allowMerge(enable: boolean, mapping: Array<MergefitMap>)**--
+5.  **allowMerge(enable: boolean, mapping: Array<MergefitMap>)**
     To use this feature import MergefitMap class along with CarouselOptions and pass an array of mapping
     
 ```typescript
