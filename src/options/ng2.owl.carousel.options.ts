@@ -1,11 +1,23 @@
+import { ScreenResolutionMap, MergefitMap } from "./ng2.owl.carousel.mapping";
+
 class CarouselOptions {
    /* Owl Carousel options */
     items: number;
     margin: number;
     loop: boolean;
+    dots: boolean;
+    dotsEach: number | boolean;
+    dotData: boolean;
     center: boolean;
     nav: boolean;
+    navSpeed: boolean| number;
+    dotSpeed: boolean | number;
+    callbacks: boolean;
+    responsiveRefreshRate: number;
     rewind: boolean;
+    navText: Array<string>;
+    navElement: string;
+    slideBy: number | string;
     mouseDrag: boolean;
     touchDrag: boolean;
     pullDrag: boolean;
@@ -23,9 +35,7 @@ class CarouselOptions {
     responsive: object;
     responsiveRefshRate: number;
     responsiveBaseElement: Window;
-    fallbackEasi: string;
-    info: boolean;
-    nestedItemSelector: boolean;
+    nestedItemSelector: boolean | string;
     itemElement: string;
     stageElement: string;
     refreshClass: string;
@@ -43,16 +53,39 @@ class CarouselOptions {
     autoplayHoverPause: boolean;
     lazyLoad: boolean;
     mouseScroll: boolean;
-
+    URLhashListener: boolean;
+    video: boolean;
+    videoHeight: number | boolean;
+    videoWidth: number | boolean;
+    animateOut: string | boolean;
+    animateIn: string | boolean;
+    fallbackEasing: string;
+    info: any;
+    navContainer: string | boolean;
+    dotsContainer: string | boolean;
     /* added feature, only applicable while using lazy-loading feature */
     preload: boolean;
     preloadCount: number;
     maxItemCount: number;
 
-    constructor(){
+    constructor() {
+        this.navContainer = false;
+        this.dotsContainer = false;
+        this.animateIn = false;
+        this.animateOut = false;
+        this.videoWidth = false;
+        this.videoHeight = false;
+        this.video = false;
         this.items = 3;
         this.margin = 5;
         this.nav = true;
+        this.navText = ["&#x27;next &#x27;","&#x27;prev &#x27;"];
+        this.navElement = "div";
+        this.responsiveRefreshRate = 200;
+        this.slideBy = 1;
+        this.dots = true;
+        this.dotsEach = false;
+        this.dotData = false;
         this.loop = false;
         this.center = false;
         this.rewind = false;
@@ -80,9 +113,10 @@ class CarouselOptions {
                 items: 7
             }
         };
+        this.URLhashListener = false;
         this.responsiveRefshRate = 200;
         this.responsiveBaseElement = window;
-        this.fallbackEasi = "swing";
+        this.fallbackEasing = "swing";
         this.info = false;
         this.nestedItemSelector = false;
         this.itemElement = "div";
@@ -132,7 +166,7 @@ class CarouselOptions {
     }
     allowMerge(enable: boolean, mapping: Array<MergefitMap>): CarouselOptions {
         this.merge = true;
-        if(mapping && mapping.length){
+        if(mapping && mapping.length) {
             mapping.forEach((item) => {
                 this.responsive[item.screenWidth] = item.mergeFit;
             });
@@ -165,17 +199,6 @@ class CarouselOptions {
     }
 }
 
-class ScreenResolutionMap {
-    screenWidth: number;
-    itemCount: number;
-    nav: boolean;
-    loop: boolean;
-}
-
-class MergefitMap {
-    screenWidth: number;
-    mergeFit: boolean;
-}
 
 export {  CarouselOptions
         , ScreenResolutionMap
