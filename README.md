@@ -18,12 +18,14 @@ npm install ng2-owl-carousel2 --save
 
 This library has dependency on jquery and owl carousel library
 
-import jquery globally as per your your project type.
-
-import owlcarousel library after importing jquery
-
-
 ### How to use
+
+import these two css files from owl.carousel npm package
+1. owl.carousel.min.css
+2. owl.theme.default.min.css
+
+import jquery globally as per your your project type.
+import owlcarousel js library after importing jquery
 
 Import and add this component to the declaration section
 
@@ -122,12 +124,11 @@ In the typescript file-
 
 
     let mappings: Array<ScreenResolutionMap> =[
-      new ScreenResolutionMap(678, true),
-      new ScreenResolutionMap(500, true)
+      new ScreenResolutionMap(1000, 6, true, false),
+      new ScreenResolutionMap(500, 3, true, false)
     ] ;
 
-    this.carouselOptions.enableMouseScroll(true)
-                        .mergeFit(mappings);
+    this.carouselOptions..makeResponsive(true, mappings);
                       
 
   }
@@ -136,6 +137,9 @@ In the typescript file-
     Direction in whichc carousel items will move
 9.  **directionLeftToRight(enable: boolean)**--
     Direction in whichc carousel items will move
+10. **setNextPrevText(prev: string, next: string)**
+    Set text of next and previous buttons
+
  
  **All these methods are chainnable**
 

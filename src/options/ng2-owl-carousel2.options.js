@@ -133,6 +133,10 @@ var CarouselOptions = (function () {
         this.rtl = false;
         return this;
     };
+    CarouselOptions.prototype.setNextPrevText = function (prev, next) {
+        this.navText = [next,prev];
+        return this;
+    };    
     return CarouselOptions;
 }());
 exports.CarouselOptions = CarouselOptions;

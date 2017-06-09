@@ -74,5 +74,6 @@ declare class CarouselOptions {
     makeResponsive(enable: boolean, mapping: Array<ScreenResolutionMap>): CarouselOptions;
     directionRightToLeft(enable: boolean): CarouselOptions;
     directionLeftToRight(enable: boolean): CarouselOptions;
+    setNextPrevText(prev: string, next: string): CarouselOptions;
 }
 export { CarouselOptions, ScreenResolutionMap, MergefitMap };
