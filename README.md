@@ -16,18 +16,19 @@ npm install ng2-owl-carousel2 --save
 
 ### Dependencies
 
-This library has dependency on jquery and owl carousel library
-
-### How to use
+This library has dependency on jquery and owl carousel library.  
+import dependecies as mentioned below- 
 
 import these two css files from owl.carousel npm package
 1. owl.carousel.min.css
 2. owl.theme.default.min.css
 
-import jquery globally as per your your project type.
-import owlcarousel js library after importing jquery
+import jquery globally as per your your project type.    
+import owlcarousel js library after importing jquery  
 
-Import and add this component to the declaration section
+### How to use
+
+Import and add this component to the declaration section of your module
 
 ```typescript
 import { Ng2OwlCarouselComponent } from "ng2.owl.carousel";
