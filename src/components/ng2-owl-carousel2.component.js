@@ -15,6 +15,7 @@ exports.ScreenResolutionMap = ng2_owl_carousel2_options_1.ScreenResolutionMap;
 exports.MergefitMap = ng2_owl_carousel2_options_1.MergefitMap;
 var Ng2OwlCarouselComponent = (function () {
     function Ng2OwlCarouselComponent() {
+        this.useAttributeSelector = false;
         this.defaultOptions = new ng2_owl_carousel2_options_1.CarouselOptions();
     }
     Ng2OwlCarouselComponent.prototype.ngOnInit = function () {
@@ -25,7 +26,7 @@ var Ng2OwlCarouselComponent = (function () {
         }
     };
     Ng2OwlCarouselComponent.prototype.ngAfterViewInit = function () {
-        var $carousel = $(".carousel-wrapper");
+        var $carousel = $(".carousel-wrapper div");
         /* Handle mouse scroll */
         if (this.options.mouseScroll) {
             // tslint:disable-next-line:typedef
@@ -42,16 +43,19 @@ var Ng2OwlCarouselComponent = (function () {
         }
         $carousel.owlCarousel(this.options);
     };
+    __decorate([
+        core_1.Input()
+    ], Ng2OwlCarouselComponent.prototype, "useAttributeSelector", void 0);
+    __decorate([
+        core_1.Input()
+    ], Ng2OwlCarouselComponent.prototype, "options", void 0);
+    Ng2OwlCarouselComponent = __decorate([
+        core_1.Component({
+            // tslint:disable-next-line:quotemark
+            selector: 'ng2-owl-carousel2',
+            template: "\n  <div class=\"carousel-wrapper owl-carousel owl-theme\">\n  <div *ngIf=\"useAttributeSelector\">\n  <ng-content select=\"[carousel-item]\"> </ng-content>\n  </div>\n  <div *ngIf=\"!useAttributeSelector\">\n  <ng-content select=\"carousel-item\"> </ng-content>\n  </div>\n  </div>"
+        })
+    ], Ng2OwlCarouselComponent);
     return Ng2OwlCarouselComponent;
 }());
-__decorate([
-    core_1.Input()
-], Ng2OwlCarouselComponent.prototype, "options", void 0);
-Ng2OwlCarouselComponent = __decorate([
-    core_1.Component({
-        // tslint:disable-next-line:quotemark
-        selector: 'ng2-owl-carousel2',
-        template: "\n  <div class=\"carousel-wrapper owl-carousel owl-theme\">\n    <ng-content> </ng-content>\n  </div>"
-    })
-], Ng2OwlCarouselComponent);
 exports.Ng2OwlCarouselComponent = Ng2OwlCarouselComponent;

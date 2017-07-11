@@ -1,13 +1,11 @@
 # ng2-owl-carousel2
-Owl Carousel for Angular 2+ 
-
-This is not an official distribution of owl carousel 2
-
+This is not a official distribution of owl carousel 2
+Owl Carosel for Angular 2+
 
 ### Installation
 Run this command to install this library
 ```bash
-npm install ng2-owl-carousel2 --save
+npm install ng2-owl-carousel2
 ```
 
 
@@ -16,19 +14,16 @@ npm install ng2-owl-carousel2 --save
 
 ### Dependencies
 
-This library has dependency on jquery and owl carousel library.  
-import dependecies as mentioned below- 
+This library needs jquery and owl carousel library
 
-import these two css files from owl.carousel npm package
-1. owl.carousel.min.css
-2. owl.theme.default.min.css
+import jquery globally as per your type of your project.
 
-import jquery globally as per your your project type.    
-import owlcarousel js library after importing jquery  
+import owlcarousel library after importing jquery
+
 
 ### How to use
 
-Import and add this component to the declaration section of your module
+Import and add this component to the declaration section
 
 ```typescript
 import { Ng2OwlCarouselComponent } from "ng2.owl.carousel";
@@ -45,13 +40,21 @@ import { Ng2OwlCarouselComponent } from "ng2.owl.carousel";
 })
 export class AppModule { }
 ```
-Now go the component where you want to use it. and place your html inside ```<ng2-owl-carousel2></ng2-owl-carousel2>``` tag
+Now go the component where you want to use it. and place your html inside <ng2-owl-carousel2></ng2-owl-carousel2> tag
 
 ```html
- <ng2-owl-carousel2
+ <ng2-owl-carousel2 (onItemSelect)="onItemSelect($event)"
+     useAttributeSelector="boolean value"
      [options]="carouselOptions">
-     //your html goes here
+    <!--If attribute selector is  true-->     
+    //add carousel-item attribute to the html element. onselect will do nothing in this case
+    <div carousel-item><div>
+     <!--If attribute selector is  false-->     
+     <carousel-item *ngFor="let item of <your item collection>">
+     //your item template here
+     <carousel-item>
  </ng2-owl-carousel2>
+
 
 ```
 In the typescript file-
@@ -70,20 +73,23 @@ In the typescript file-
     this.carouselOptions.enableMouseScroll(true)
                         .directionLeftToRight(true);
     
-  }
+   }
+    onItemSelect(carouselItem:any):void{
+    //this carousel item can be used anywhere
+    }
 ```
 
 
 ## APIs
-1.  **setAutoHeight(enable: boolean)**    
+1.  **setAutoHeight(enable: boolean)**--
     Set auto height
-2.  **setAutoWidth(enable: boolean)** 
-     Set auto width 
-3.  **enableAutoPlay(autoPlay?: boolean, autoplayTimeout?: number, autoplayHoverPause?: boolean)**
+2.  **setAutoWidth(enable: boolean)**--
+    set auto width 
+3.  **enableAutoPlay(autoPlay?: boolean, autoplayTimeout?: number, autoplayHoverPause?: boolean)**--
     Enables auto play
-4.  **enableLazyLoading(enable: boolean)**
+4.  **enableLazyLoading(enable: boolean)**--
     Enables lazy loading of images
-5.  **allowMerge(enable: boolean, mapping: Array<MergefitMap>)**
+5.  **allowMerge(enable: boolean, mapping: Array<MergefitMap>)**--
     To use this feature import MergefitMap class along with CarouselOptions and pass an array of mapping
     
 ```typescript
@@ -125,11 +131,12 @@ In the typescript file-
 
 
     let mappings: Array<ScreenResolutionMap> =[
-      new ScreenResolutionMap(1000, 6, true, false),
-      new ScreenResolutionMap(500, 3, true, false)
+      new ScreenResolutionMap(678, true),
+      new ScreenResolutionMap(500, true)
     ] ;
 
-    this.carouselOptions..makeResponsive(true, mappings);
+    this.carouselOptions.enableMouseScroll(true)
+                        .mergeFit(mappings);
                       
 
   }
@@ -138,9 +145,8 @@ In the typescript file-
     Direction in whichc carousel items will move
 9.  **directionLeftToRight(enable: boolean)**--
     Direction in whichc carousel items will move
-10. **setNextPrevText(prev: string, next: string)**
-    Set text of next and previous buttons
-
+10. **onItemSelect event**--
+    onItemSelect will be fired whenever any item will be seleted 
  
  **All these methods are chainnable**
 
