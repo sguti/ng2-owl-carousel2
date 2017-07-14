@@ -26,7 +26,7 @@ var Ng2OwlCarouselComponent = (function () {
         }
     };
     Ng2OwlCarouselComponent.prototype.ngAfterViewInit = function () {
-        var $carousel = $(".carousel-wrapper div");
+        var $carousel = $(".owl-carousel");
         /* Handle mouse scroll */
         if (this.options.mouseScroll) {
             // tslint:disable-next-line:typedef
@@ -53,7 +53,7 @@ var Ng2OwlCarouselComponent = (function () {
         core_1.Component({
             // tslint:disable-next-line:quotemark
             selector: 'ng2-owl-carousel2',
-            template: "\n  <div class=\"carousel-wrapper owl-carousel owl-theme\">\n  <div *ngIf=\"useAttributeSelector\">\n  <ng-content select=\"[carousel-item]\"> </ng-content>\n  </div>\n  <div *ngIf=\"!useAttributeSelector\">\n  <ng-content select=\"carousel-item\"> </ng-content>\n  </div>\n  </div>"
+            template: "<div *ngIf=\"useAttributeSelector\">\n  <ng-content class=\"owl-carousel\" select=\"[carousel-item]\"> </ng-content>\n  </div>\n  <div *ngIf=\"!useAttributeSelector\">\n  <ng-content select=\"carousel-item\"> </ng-content>\n  </div>"
         })
     ], Ng2OwlCarouselComponent);
     return Ng2OwlCarouselComponent;
