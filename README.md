@@ -26,7 +26,7 @@ import owlcarousel library after importing jquery
 Import and add this component to the declaration section
 
 ```typescript
-import { Ng2OwlCarouselComponent } from "ng2.owl.carousel";
+import { Ng2OwlCarouselComponent } from "ng2.owl.carousel2";
 
 @NgModule({
   declarations: [
